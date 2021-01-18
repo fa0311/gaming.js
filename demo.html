@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="js/gaming.js" type="text/javascript"></script>
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+</head>
+<style>
+    input {
+        display: inline;
+    }
+    
+    p {
+        margin: 0px;
+    }
+    
+    div {
+        padding: 1em 0px;
+    }
+</style>
+
+<body>
+    <div id="gaming1">
+        <i>speed: 10, frame: 10</p>
+    </div>
+    <div id="gaming2">
+        <p>speed: 2, frame: 100</p>
+    </div>
+    <div id="gaming3">
+        <p>speed: 0.5, frame: 10</p>
+    </div>
+    <div id="gaming4">
+        <p>ON/OFF: <input id="checkbox4" type="checkbox">, speed: 10, frame: 10</p>
+    </div>
+    <div id="gaming5">
+        <p>speed: 10, frame: 10, color:200, 200, 200</p>
+    </div>
+    <div id="gaming6">
+        <p></p>
+    </div>
+</body>
+
+</html>
+<script>
+    var instance1 = new gaming($("#gaming1")).start();
+
+    var instance2 = new gaming($("#gaming2"), 2, 100).start();
+
+    var instance3 = new gaming($("#gaming3"), 0.5).start();
+
+    var instance4 = new gaming($("#gaming4")).start();
+    $('#checkbox4').click(function() {
+        if ($('#checkbox4').prop('checked')) {
+            instance4.stop();
+        } else {
+            instance4.start();
+        }
+    });
+
+    var instance5 = new gaming($("#gaming5"));
+    instance5.color = [200, 200, 200]; // 現在の色 スタートする前に変えることで最初の色を変更できる   [0-254(int),0-254(int),0-254(int)]   [R,G,B]
+    instance5.start();
+
+    var instance6 = new gaming(function(r, g, b) {
+        $("#gaming6").find("p").text("R:" + r + "G:" + g + "B:" + b)
+        $("#gaming6").css({
+                "cssText": "background-color: rgb(" + this.color[0] + ", " + this.color[1] + ", " + this.color[2] + ")!important"
+            });
+    }).start();
+</script>

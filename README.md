@@ -1,7 +1,7 @@
 # gaming.js
 
 WEB サイトをゲーミング仕様にできるライブラリです<br>
-[demo](https://fa0311.github.io/gaming.js/demo.html)
+[demo.html](https://fa0311.github.io/gaming.js/demo.html)
 <br>
 
 ## import
@@ -32,7 +32,7 @@ jQuery と互換性があります<br>
 var instance = new gaming(function (R, G, B) {}, 1, 10);
 ```
 
-もしくは(jQuery)<br>
+jQueryを使用した例<br>
 以下の場合指定した要素の background-color がゲーミング仕様になります
 
 ```js

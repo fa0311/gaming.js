@@ -1,7 +1,9 @@
 # gaming.js
 
 WEB サイトをゲーミング仕様にできるライブラリです<br>
-[demo.html](https://fa0311.github.io/gaming.js/demo.html)
+[demo.html](https://fa0311.github.io/gaming.js/demo.html)<br>
+[web](https://blog.yuki0311.com/gaming_js/)
+
 <br>
 
 ## import

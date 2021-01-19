@@ -60,4 +60,4 @@ instance.color = [100, 100, 100];
 
 # License
 
-get_twitter_timeline is under MIT License
+gaming.js is under MIT License
